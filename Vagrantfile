@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
    # Every Vagrant virtual environment requires a box to build off of.
-   config.vm.box = "debian73-v2"
+   config.vm.box = "debian/jessie64"
 
     config.vm.define :cassandra do |cassandra| # [1]
        cassandra.vm.hostname = "cassandra.dev.elasticsoftware.org"
