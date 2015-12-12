@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Installing RabbitMQ repo for Debian Wheezy"
+echo "Installing RabbitMQ repo for Debian Jessie"
 
-echo "deb http://packages.erlang-solutions.com/debian wheezy contrib" | tee -a /etc/apt/sources.list
+echo "deb http://packages.erlang-solutions.com/debian jessie contrib" | tee -a /etc/apt/sources.list
 wget -qO - http://packages.erlang-solutions.com/debian/erlang_solutions.asc | sudo apt-key add -
 echo "deb http://www.rabbitmq.com/debian/ testing main" | tee -a /etc/apt/sources.list
 wget -qO - http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
