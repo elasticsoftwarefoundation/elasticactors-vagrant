@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        # VirtualBox Specific Customization
        config.vm.provider :virtualbox do |vb|
             # Use VBoxManage to customize the VM. For example to change memory:
-            vb.gui = true
+            vb.gui = false 
             vb.customize ["modifyvm", :id, "--memory", "1024"]
             vb.customize ["modifyvm", :id, "--ioapic", "on"]
             vb.customize ["modifyvm", :id, "--cpus", "4"]
@@ -31,10 +31,27 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        # VirtualBox Specific Customization
        config.vm.provider :virtualbox do |vb|
             # Use VBoxManage to customize the VM. For example to change memory:
-            vb.gui = true
+            vb.gui = false 
             vb.customize ["modifyvm", :id, "--memory", "512"]
             vb.customize ["modifyvm", :id, "--ioapic", "on"]
             vb.customize ["modifyvm", :id, "--cpus", "4"]
        end
     end
+
+    config.vm.define :kafka do |kafka| # [1]
+       kafka.vm.hostname = "kafka.dev.elasticsoftware.org"
+       kafka.vm.network :private_network, ip: "192.168.56.4"
+       # Enable shell provisioning to bootstrap cassandra
+       kafka.vm.provision :shell, :path => "kafka/bootstrap.sh"
+       # VirtualBox Specific Customization
+       config.vm.provider :virtualbox do |vb|
+            # Use VBoxManage to customize the VM. For example to change memory:
+            vb.gui = false 
+            vb.customize ["modifyvm", :id, "--memory", "2048"]
+            vb.customize ["modifyvm", :id, "--ioapic", "on"]
+            vb.customize ["modifyvm", :id, "--cpus", "4"]
+       end
+    end
+
+
 end

@@ -34,7 +34,7 @@ echo "Creating cassandra configuration and schema"
 # need to stop and delete the data then restart
 /etc/init.d/cassandra stop
 rm -rf /var/lib/cassandra/*
-cp /vagrant/cassandra/cassandra.yaml /etc/cassandra
+cp /vagrant/cassandra/cassandra-2.2.yaml /etc/cassandra/cassandra.yaml
 /etc/init.d/cassandra start
 sleep 30
-cqlsh -h 192.168.56.2 -f /vagrant/cassandra/elasticactors.cql
+cqlsh -f /vagrant/cassandra/elasticactors.cql 192.168.56.2
