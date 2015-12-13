@@ -8,6 +8,5 @@ Vagrant configuration to easily setup an Elastic Actors cluster on your Developm
 * create a host-only network on Virtual Box (just leave the defaults)
 * clone this project
 * cd to the project root
-* download the file: [debian73-base-v2.box](http://goo.gl/azKl70) from Google Drive (it's a two step thing)
-* install the box in vagrant```vagrant box add debian73-v2 file:<path-to-downloaded-file>```
+* install debian 8 base box: ```vagrant box debian/jessie```
 * in the root directory run ```vagrant up```
