@@ -10,4 +10,5 @@ wget -qO - http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-ke
 apt-get update
 apt-get -y install erlang-base-hipe rabbitmq-server
 rabbitmq-plugins enable rabbitmq_management
+cp /vagrant/rabbitmq/rabbitmq.config /etc/rabbitmq/
 /etc/init.d/rabbitmq-server restart

@@ -1,0 +1,36 @@
+{"rabbit_version": "3.5.6",
+    "users": [
+        {
+            "name": "guest",
+            "password_hash": "VbCiXrofXtwZVJYgiJXchtKXs+M=",
+            "tags": "administrator"
+        },
+        {
+            "name": "admin",
+            "password_hash": "ZnvbVDkZlBcftz9uCR2ldYODaaM=",
+            "tags": "administrator"
+        }
+    ],
+    "vhosts": [],
+    "permissions": [
+        {
+            "user": "guest",
+            "vhost": "/",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        },
+        {
+            "user": "admin",
+            "vhost": "/",
+            "configure": ".*",
+            "write": ".*",
+            "read": ".*"
+        }
+    ],
+    "parameters": [],
+    "policies": [],
+    "queues": [],
+    "exchanges": [],
+    "bindings": []
+}
