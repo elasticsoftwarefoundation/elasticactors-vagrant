@@ -8,7 +8,7 @@ wget -qO - http://packages.erlang-solutions.com/debian/erlang_solutions.asc | su
 echo "deb http://www.rabbitmq.com/debian/ testing main" | tee -a /etc/apt/sources.list
 wget -qO - http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
 apt-get update
-apt-get -y install erlang-base-hipe rabbitmq-server
+apt-get -y install erlang-base-hipe rabbitmq-server --force-yes
 rabbitmq-plugins enable rabbitmq_management
 cp /vagrant/rabbitmq/rabbitmq.config /etc/rabbitmq/
 /etc/init.d/rabbitmq-server restart
